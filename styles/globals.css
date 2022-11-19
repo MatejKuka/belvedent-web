@@ -1,26 +1,63 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    h1 {
+        font-weight: 800;
+    }
+
+    * {
+        box-sizing: border-box;
+        //outline: 1px grey dashed;
+    }
+
+    html, body {
+        font-family: 'Inter', sans-serif;
+        padding: 0;
+        margin: 0;
+    }
+
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
+@layer utilities {
+    .text-primary-color {
+        color: #002D4B;
+    }
 
-* {
-  box-sizing: border-box;
-}
+    .text-secondary-color {
+        color: #679DAB;
+    }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+    .text-tertiary-color {
+        color: #3F6068;
+    }
+
+    .bg-primary-color {
+        background: #002D4B;
+    }
+
+    .bg-secondary-color {
+        background: #679DAB;
+    }
+
+    .bg-tertiary-color {
+        background: #F0F5F7
+    }
+
+    .primary-shadow {
+        box-shadow: 0 4px 25px rgba(0, 0, 0, 0.08);
+    }
+
+    .text-another-color {
+        color: #F0F5F7;
+    }
+
+
 }
