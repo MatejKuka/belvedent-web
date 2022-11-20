@@ -51,6 +51,11 @@
         background: #F0F5F7
     }
 
+    .bg-custom-gradient {
+        background: linear-gradient(227.76deg,
+        #679DAB 23.28%, #002D4B 124.53%);;
+    }
+
     .primary-shadow {
         box-shadow: 0 4px 25px rgba(0, 0, 0, 0.08);
     }
