@@ -11,7 +11,7 @@
 
     * {
         box-sizing: border-box;
-        //outline: 1px grey dashed;
+        outline: 1px grey dashed;
     }
 
     html, body {
