@@ -1,5 +1,5 @@
 import Image from "next/image";
-import {Grid} from '@mantine/core';
+import {Grid, Select} from '@mantine/core';
 import logoCompany from "../public/logo-company.png";
 import youngWomanPreview from "../public/young-woman-preview.png";
 import teethPic1 from "../public/teeth-pic-1.png";
@@ -8,12 +8,14 @@ import teethPic3 from "../public/teeth-pic-3.png";
 import twoPeoplePhoto from "../public/two-people-photo.png";
 import smilingWomanPhoto from "../public/woman-smiling.png";
 import IconPlus from "../public/icon-plus.png";
-import LastSectionBg from "../public/last-section-bg.png";
 import StepItem from "../components/StepItem";
 import ActionSection from "../components/ActionSection";
 import React from "react";
 import {Accordion} from '@mantine/core';
 import AccordionItem from "../components/AccordionItem";
+import {TextInput} from '@mantine/core';
+import CustomerExperienceItem from "../components/CustomerExperienceItem";
+import CustomerPhoto from "../public/jana-smith-customer-photo.png";
 
 const FAQ_LIST = [
     {
@@ -188,12 +190,38 @@ function Home() {
                                 životu</p>
                             <p className={"font-semibold text-xl mt-2 mb-10"}>Rezervujte si nezáveznú konzultáciu v
                                 klinike.</p>
-                            <form action="submit">
-                                <p>FORMULAR HERE</p>
-                                <button
-                                    className={"w-full bg-secondary-color rounded-[10px] py-[15px] mt-12 text-white font-medium text-base"}>Odoslať
-                                </button>
-                            </form>
+                            <Grid>
+                                <Grid.Col span={6}>
+                                    <TextInput
+                                        placeholder="Vaše meno *"
+                                        label="Meno"
+                                        radius="md"/>
+                                </Grid.Col>
+                                <Grid.Col span={6}>
+                                    <TextInput
+                                        placeholder="Vaše priezvisko *"
+                                        label="Priezvisko"
+                                        radius="md"/>
+                                </Grid.Col>
+                            </Grid>
+                            <TextInput
+                                className={"my-4"}
+                                placeholder="email@adresa.com *"
+                                label="Email"
+                                radius="md"/>
+                            <TextInput
+                                className={"mb-4"}
+                                placeholder="+421 000 000 000 *"
+                                label="Telefónne číslo"
+                                radius="md"/>
+                            <Select
+                                data={['Mám záujem o rekonštrukciu chrupu']}
+                                placeholder="Vyberte si"
+                                radius="md"
+                            />
+                            <button
+                                className={"w-full bg-secondary-color rounded-[10px] py-[15px] mt-12 text-white font-medium text-base"}>Odoslať
+                            </button>
                         </div>
                     </Grid.Col>
                 </Grid>
@@ -202,7 +230,13 @@ function Home() {
             <div className={"px-4 py-10"}>
                 <p className={"text-xs text-secondary-color font-semibold"}>Testimonials</p>
                 <p className={"text-3xl font-semibold my-3 w-11/12"}>Naši spokojní zákazníci</p>
-                <div className={"w-full h-[300px] bg-amber-100 text-center"}>CUSTOMER EXPERIENCE HERE</div>
+
+                <CustomerExperienceItem
+                    source={"Google Review"}
+                    name={"Jane Smith"}
+                    photoURL={CustomerPhoto}
+                    text={"Amet massa est volutpat diam. Cras natoque magna commodo nullam nisi. Netus et tempus eu sit eu. Morbi aliquet placerat sit pellentesque. Faucibus feugiat bibendum habitant feugiat."}/>
+
                 <div className={"relative w-full h-[200px] my-8"}>
                     <Image
                         fill
@@ -256,11 +290,15 @@ function Home() {
                     </Grid.Col>
                 </Grid>
             </div>
-            <div className={"bg-[url('../public/last-section-bg.png')] w-full h-auto"}>
-                <p>sdasd</p>
-                <p>sdasd</p>
-                <p>sdasd</p>
-                <p>sdasd</p>
+            <div
+                className={"bg-[url('../public/last-section-bg.png')] w-full h-[420px] bg-no-repeat bg-center flex flex-col justify-center items-center"}>
+                <p className={"uppercase text-xs text-white font-medium"}>section tagline</p>
+                <p className={"mt-3 mb-6 text-2xl text-white font-semibold text-center w-5/6"}>Objednajte sa na
+                    nezáveznú konzultáciu</p>
+                <button
+                    className={"px-[32px] py-[16px] bg-white rounded-[10px] primary-shadow text-lg font-semibold"}>Button
+                    CTA
+                </button>
             </div>
         </>
 
